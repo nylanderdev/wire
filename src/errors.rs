@@ -24,17 +24,16 @@ pub fn exit_with_usage_error() -> ! {
     std::process::exit(USAGE_ERROR)
 }
 
-
 pub fn unwrap_or_closed_error<T, _E>(result: Result<T, _E>) -> T {
     match result {
         Ok(t) => t,
-        _ => exit_with_closed_error()
+        _ => exit_with_closed_error(),
     }
 }
 
 pub fn unwrap_or_connection_error<T, _E>(result: Result<T, _E>) -> T {
     match result {
         Ok(t) => t,
-        _ => exit_with_connection_error()
+        _ => exit_with_connection_error(),
     }
 }
